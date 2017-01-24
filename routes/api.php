@@ -13,7 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
+/** Users & Auth Route */
 Route::post('auth/register','Api\AuthController@register');
 Route::post('auth/login','Api\AuthController@login');
 Route::get('users','Api\UserController@users');
 Route::get('users/profile','Api\UserController@profile')->middleware('auth:api');
+
+/** Post Route */
+Route::post('oponions/store','Api\OpinionController@store')->middleware('auth:api');
